@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Expansion {
-	private String ExpansionId;
-	private String Name;
-	private String PtBRName;
-	private String LinkName;
-	private String Code;
-	private Date LaunchDate;
-	private Long ExpansionCategoryId;
-	private Boolean IsPromo;
-	private Boolean IsLegal;
+	private String expansionId;
+	private String name;
+	private String ptBRName;
+	private String linkName;
+	private String code;
+	private Date launchDate;
+	private Long expansionCategoryId;
+	private Boolean isPromo;
+	private Boolean isLegal;
 }
