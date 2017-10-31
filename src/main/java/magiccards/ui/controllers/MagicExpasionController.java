@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import magiccards.ui.entities.Card;
 import magiccards.ui.entities.MagicExpansion;
 import magiccards.ui.entities.Page;
 import magiccards.ui.entities.TablePage;
