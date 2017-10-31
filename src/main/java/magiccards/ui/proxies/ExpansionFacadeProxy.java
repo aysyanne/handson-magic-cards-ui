@@ -1,6 +1,6 @@
 package magiccards.ui.proxies;
 
-import magiccards.ui.entities.Card;
+import magiccards.ui.controllers.MagicExpasion;
 import magiccards.ui.entities.Page;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
-@FeignClient(url= "${rest.client.cards.url:default}/magicexapansion", name="cards")
+@FeignClient(url= "${rest.client.cards.url:default}/magicexapansion", name="magicexpansion")
 public interface ExpansionFacadeProxy {
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
-    Card getExpansionById(@PathVariable("id") String gathererId);
+    MagicExpasion getExpansionById(@PathVariable("id") String gathererId);
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
-    Page<Card> getExpansion(@RequestParam(value = "page") int pageNumber, @RequestParam(value = "size") int size);
+    Page<MagicExpasion> getExpansion(@RequestParam(value = "page") int pageNumber, @RequestParam(value = "size") int size);
 
     @RequestMapping(value = "", method = RequestMethod.POST, consumes = "application/json")
-    void create(Card card);
+    void create(MagicExpasion magicExpasion);
 
     @RequestMapping(value = "", method = RequestMethod.PUT)
-    void update(Card card);
+    void update(MagicExpasion magicExpasion);
 
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
     void delete(@PathVariable("id") String id);
