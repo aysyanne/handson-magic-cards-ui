@@ -4,10 +4,7 @@ import magiccards.ui.entities.Card;
 import magiccards.ui.entities.Page;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Component
 @FeignClient(url= "${rest.client.cards.url:default}/cards", name="cards")
@@ -20,7 +17,7 @@ public interface CardsFacadeProxy {
     Page<Card> getcards(@RequestParam(value="page")int pageNumber, @RequestParam(value="size")int size);
 
     @RequestMapping(value = "", method = RequestMethod.POST, consumes = "application/json")
-    void create(Card card);
+    void create(@RequestBody Card card);
 
     @RequestMapping(value = "", method = RequestMethod.PUT)
     void update(Card card);
