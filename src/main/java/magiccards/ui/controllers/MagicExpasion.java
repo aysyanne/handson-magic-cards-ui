@@ -18,7 +18,7 @@ public class MagicExpasion {
 	private CardsFacadeProxy magicExpasionProxy;
 	
 	
-	@RequestMapping(value="", method = RequestMethod.GET)
+	@RequestMapping(value="/magicexpasion", method = RequestMethod.GET)
     public String list() {
 
         return "";
